@@ -53,5 +53,9 @@ class ProdukController extends Controller
         $validated['gambar_pendamping2'] = $gambarPendamping2 ?? null;
         $validated['gambar_pendamping3'] = $gambarPendamping3 ?? null;
 
+        Produk::create($validated);
+        sweetalert()->success('Sukses', 'Produk berhasil ditambahkan!');
+        return redirect()->route('produk.index');
+
     }   
 }
